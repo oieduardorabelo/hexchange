@@ -6,8 +6,10 @@ let URL = 'http://localhost:8080/servico-b';
 
 async function getCoinPrice({ coin }) {
   try {
-    let req = await Promise.race([timeout(5), nodefetch(`${URL}/cotacao?curr=${coin.toUpperCase()}`)]);
-    let json = await req.json();
+    let json = await Promise.race([
+      timeout(5),
+      nodefetch(`${URL}/cotacao?curr=${coin.toUpperCase()}`).then((req) => req.json()),
+    ]);
     let payload = {
       value: json.cotacao.valor / json.cotacao.fator,
       tag: 'serviceB',

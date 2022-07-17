@@ -9,7 +9,7 @@ let URL = 'http://localhost:8080/servico-c';
 
 async function getCoinPrice({ coin, callback }) {
   try {
-    let reqCallback = await Promise.race([
+    let jsonCallback = await Promise.race([
       timeout(5),
       nodefetch(`${URL}/cotacao`, {
         method: 'post',
@@ -18,9 +18,8 @@ async function getCoinPrice({ coin, callback }) {
           tipo: coin,
           callback,
         }),
-      }),
+      }).then((req) => req.json()),
     ]);
-    let jsonCallback = await reqCallback.json();
     let [json] = await Promise.race([timeout(5), once(events, `serviceC.events.${jsonCallback.cid}`)]);
     let payload = {
       value: json.v / json.f,
