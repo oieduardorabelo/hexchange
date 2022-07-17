@@ -17,7 +17,7 @@ Based on [Francisco Zanfranceschi](https://twitter.com/zanfranceschi) tweet chal
 
 **Requirements:**
 
-- Node.js 14.x or above
+- Node.js 16.x or above
 - Docker 20.x or above
 - pnpm 7.x or npm 7.x
 

@@ -1,4 +1,4 @@
-let { once, EventEmitter } = require('events');
+let { once, EventEmitter } = require('node:events');
 let nodefetch = require('node-fetch');
 
 let events = new EventEmitter();
