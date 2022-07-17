@@ -3,7 +3,7 @@ let express = require('express');
 
 dotenv.config();
 
-let { PORT, DEFAUL_COIN, URL_CALLBACK_SERVICE_C } = process.env;
+let { COIN_TO_COMPARE, PORT, URL_CALLBACK_SERVICE_C } = process.env;
 
 let serviceA = require('./repositories/serviceA');
 let serviceB = require('./repositories/serviceB');
@@ -53,7 +53,7 @@ app.get('/cotacoes/:coin', (req, res) => {
         {
           cotacao: null,
           moeda: reqCoinSlug,
-          comparativo: DEFAUL_COIN,
+          comparativo: COIN_TO_COMPARE,
           tag: null,
         }
       );
