@@ -1,4 +1,3 @@
-let cors = require('cors');
 let dotenv = require('dotenv');
 let express = require('express');
 
@@ -13,11 +12,6 @@ let serviceC = require('./repositories/serviceC');
 let app = express();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: '*',
-  })
-);
 
 /**
  * curl \

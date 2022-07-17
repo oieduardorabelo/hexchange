@@ -3,7 +3,7 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "cors": "2.8.5",
+    "dotenv": "16.0.1",
     "express": "4.18.1",
     "node-fetch": "2.6.7"
   },
@@ -12,7 +12,6 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "dotenv": "16.0.1",
     "nodemon": "2.0.19"
   }
 }
